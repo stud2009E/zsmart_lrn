@@ -1,0 +1,47 @@
+<mvc:View
+	controllerName="z.smart.lrn.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:smt="sap.ui.comp.smarttable"
+    xmlns:smf="sap.ui.comp.smartfield"
+    xmlns:smmi="sap.ui.comp.smartmultiinput"
+	xmlns:smfb="sap.ui.comp.smartfilterbar"
+    xmlns:t="sap.ui.table"
+	displayBlock="true"
+    xmlns="sap.m">
+
+    <Page>
+
+		<smfb:SmartFilterBar id="smartfilterbar"
+			enableBasicSearch="true"
+			entitySet="HeaderSet"
+		/>
+
+		<smt:SmartTable
+			smartFilterId="smartfilterbar"
+			enableAutoBinding="true"
+			entitySet="HeaderSet"
+			requestAtLeastFields="Byte">
+			<t:Table cellClick="onTableCellClick"/>
+		</smt:SmartTable>
+
+		<VBox id="smartContainer" width="50rem">
+			<smf:Smartfield value="{String}"
+				class="sapUiTinyMargin"/>
+
+			<!-- <smmi:SmartMultiInput value="{String}"
+				class="sapUiTinyMargin"/> -->
+
+			<smf:Smartfield value="{Date}"
+				class="sapUiTinyMargin"/>
+
+			<smf:Smartfield value="{Int16}"
+				class="sapUiTinyMargin"/>
+
+			<smf:Smartfield value="{Boolean}"
+				class="sapUiTinyMargin"/>
+
+		</VBox>
+    </Page>
+
+</mvc:View>

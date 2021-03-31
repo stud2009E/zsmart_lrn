@@ -1,0 +1,9 @@
+<mvc:View
+	controllerName="z.smart.lrn.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+    <App id="app" height="100%"
+        defaultTransitionName="show"/>
+
+</mvc:View>

@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns:smt="sap.ui.comp.smarttable"
+    xmlns:smf="sap.ui.comp.smartfield"
+    xmlns:t="sap.ui.table"
+    xmlns="sap.m">
+
+    <smt:SmartTable 
+        enableAutoBinding="true"
+        entitySet="HeaderSet"
+        requestAtLeastFields="Byte">
+        <t:Table cellClick="onTableCellClick"/>
+    </smt:SmartTable>
+
+    <VBox id="smartContainer">
+        <smf:Smartfield value="{String}"
+            class="sapUiTinyMarginBottom"/>
+        <smf:Smartfield value="{Date}"
+            class="sapUiTinyMarginBottom"/>
+        <smf:Smartfield value="{Int16}"
+            class="sapUiTinyMarginBottom"/>
+    </VBox>
+</core:FragmentDefinition>
