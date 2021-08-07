@@ -1,0 +1,68 @@
+<mvc:View
+	controllerName="z.smart.lrn.controller.SmartField"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:smt="sap.ui.comp.smarttable"
+    xmlns:smf="sap.ui.comp.smartfield"
+    xmlns:smmi="sap.ui.comp.smartmultiinput"
+	xmlns:smfb="sap.ui.comp.smartfilterbar"
+    xmlns:t="sap.ui.table"
+    xmlns="sap.m"
+	displayBlock="true">
+
+    <Page title="SmartField"
+		showNavButton="true"
+		navButtonPress="onNavToMain">
+		<VBox>
+			<smt:SmartTable
+				enableAutoBinding="true"
+				entitySet="HeaderSet"
+				requestAtLeastFields="Byte">
+				<t:Table cellClick="onTableCellClick"
+					visibleRowCount="7"
+					visibleRowCountMode="Fixed"/>
+			</smt:SmartTable>
+		</VBox>
+		
+
+		<VBox id="smartContainer"
+			width="50%"
+			class="sapUiTinyMargin">
+			
+			<smf:SmartLabel labelFor="Guid"/>
+			<smf:Smartfield id="Guid" value="{Guid}"/>
+
+			<smf:SmartLabel labelFor="String"/>
+			<smf:Smartfield id="String" value="{String}"/>
+
+			<!-- <smf:SmartLabel labelFor="multiString"/>
+			<smmi:SmartMultiInput id="multiString"
+				value="{String}"/> -->
+
+			<smf:SmartLabel labelFor="Date"/>
+			<smf:Smartfield id="Date"
+				value="{Date}"/>
+
+			<smf:SmartLabel labelFor="Int16"/>
+			<smf:Smartfield id="Int16" 
+				value="{Int16}"/>
+
+			<smf:SmartLabel labelFor="Int32"/>
+			<smf:Smartfield id="Int32" 
+				value="{Int32}"/>
+
+			<smf:SmartLabel labelFor="Decimal"/>
+			<smf:Smartfield id="Decimal" 
+				value="{Decimal}"/>
+
+			<smf:SmartLabel labelFor="Boolean"/>
+			<smf:Smartfield id="Boolean"
+				value="{Boolean}"/>
+
+			<smf:SmartLabel labelFor="Price"/>
+			<smf:Smartfield id="Price"
+				value="{Price}"/>
+		</VBox>
+    </Page>
+
+</mvc:View>

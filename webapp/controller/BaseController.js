@@ -54,6 +54,9 @@ sap.ui.define([
             return oBundle.getText.apply(oBundle, arguments);
         },
 
+        onNavToMain: function(){
+            this.getRouter().navTo("main");
+        },
 
         /**
          * Event handler for navigating back.

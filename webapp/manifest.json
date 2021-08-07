@@ -110,6 +110,16 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
+				},
+				{
+					"pattern": "smartField",
+					"name": "smartField",
+					"target": "smartField"
+				},
+				{
+					"pattern": "smartFilterBar",
+					"name": "smartFilterBar",
+					"target": "smartFilterBar"
 				}
 			],
 			"targets": {
@@ -117,6 +127,16 @@
 					"viewName": "Main",
 					"viewLevel": 1,
 					"viewId": "main"
+				},
+				"smartField": {
+					"viewName": "SmartField",
+					"viewLevel": 2,
+					"viewId": "smartField"
+				},
+				"smartFilterBar": {
+					"viewName": "SmartFilterBar",
+					"viewLevel": 2,
+					"viewId": "smartFilterBar"
 				},
 				"notFound": {
 					"viewName": "NotFound",

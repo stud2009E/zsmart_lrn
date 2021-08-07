@@ -5,19 +5,11 @@ sap.ui.define([
 ) {
     "use strict";
 
-    return BaseController.extend("z.smart.lrnotnsp .controller.Main", {
+    return BaseController.extend("z.smart.lrnotnsp .controller.SmartField", {
 
         onInit : function () {
 
-            this.getRouter().getRoute("main").attachMatched(this._onRouteMatch, this);
-        },
-
-
-        showExample: function(oEvent){
-            var oButton = oEvent.getSource();
-            var sRouteName = oButton.data("route");
-            
-            this.getRouter().navTo(sRouteName);
+            this.getRouter().getRoute("smartField").attachMatched(this._onRouteMatch, this);
         },
 
         /**
@@ -25,8 +17,9 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent 
          */
         _onRouteMatch: function(oEvent){
-            
+
         },
+
 
         /**
          * handle table cell click
@@ -41,4 +34,4 @@ sap.ui.define([
 
     });
 
-});
+}, true);

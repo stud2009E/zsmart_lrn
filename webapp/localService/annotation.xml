@@ -2,6 +2,9 @@
 	<edmx:Reference Uri="/sap/opu/odata/SAP/ZSMART_LRN/$metadata">
 		<edmx:Include Alias="Metadata" Namespace="ZSMART_LRN"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
 	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
 		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
 	</edmx:Reference>
@@ -17,6 +20,27 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="annotation.ZSMART_LRN">
 			<Annotations Target="Metadata.HeaderType">
+				<Annotation Term="UI.PresentationVariant" >
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>Int32</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.LineItem</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>Guid</PropertyPath>
+					</Collection>
+				</Annotation>
+
 				<Annotation Term="UI.LineItem">
 					<Collection>
 						<Record Type="UI.DataField">
@@ -27,12 +51,16 @@
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Byte"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="String"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Decimal"/>
+							<PropertyValue Property="Criticality" Path="Byte"/>
+							<PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithIcon"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Boolean"/>
@@ -43,27 +71,133 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Time"/>
 						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Price"/>
+						</Record>
 					</Collection>
 				</Annotation>
+
+				<Annotation Term="UI.SelectionFields" >
+					<Collection>
+						<PropertyPath>Boolean</PropertyPath>
+						<PropertyPath>Date</PropertyPath>
+						<PropertyPath>String</PropertyPath>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.SelectionVariant">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType">
+									<PropertyValue Property="PropertyName" PropertyPath="Int32"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType">
+												<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+												<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GT"/>
+												<PropertyValue Property="Low" Int="123"/>
+											</Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="UI.FieldGroup" Qualifier="fg1">
+					<Record Type="UI.FieldGroupType">
+					<PropertyValue Property="Label" String="Label group 1"/>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Guid"/>
+									<PropertyValue Property="Label" String="fg1 Guid"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Time"/>
+									<PropertyValue Property="Label" String="fg1 Time"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="UI.FieldGroup" Qualifier="fg2">
+					<Record Type="UI.FieldGroupType">
+						<PropertyValue Property="Label" String="Label group 2"/>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Decimal"/>
+									<PropertyValue Property="Label" String="fg2 Decimal"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Byte"/>
+									<PropertyValue Property="Label" String="fg2 Byte"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="UI.FilterFacets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="Label group 1"/>
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#fg1"/>
+						</Record>
+
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="Label group 2"/>
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#fg2"/>
+						</Record>
+					</Collection>
+				</Annotation>
+
 			</Annotations>
 			
-			<Annotations Target="Metadata.HeaderType/String">
-				<Annotation Term="Common.FieldControl" Path="Byte"/>
-				<!-- <Annotation Term="UI.MultiLineText"/> -->
+			<Annotations Target="Metadata.ZSMART_LRN_Entities/HeaderSet">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record Type="Capabilities.FilterRestrictionsType">
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>Int16</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequiredProperties">
+							<Collection>
+								<PropertyPath>Int32</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 
+				<!-- <Annotation Term="Common.FilterExpressionRestrictions">
+					<Collection>
+						<Record Type="Common.FilterExpressionRestrictionType">
+							<PropertyValue Property="Property" PropertyPath="String"/>
+							<PropertyValue Property="AllowedExpressions" EnumMember="Common.FilterExpressionType/SingleValue"/>
+						</Record>
+					</Collection>
+				</Annotation> -->
+			</Annotations>
+
+			<Annotations Target="Metadata.HeaderType/String">
 				<Annotation Term="Common.ValueList">
 					<Record Type="Common.ValueListType">
 						<PropertyValue Property="CollectionPath" String="BodySet"/>
 						<PropertyValue Property="Parameters">
 							<Collection>
-								<Record Type="Common.ValueListParameterInOut">
-									<PropertyValue Property="LocalDataProperty" PropertyPath="String"/>
-									<PropertyValue Property="ValueListProperty" String="Name"/>
-								</Record>
 								<Record Type="Common.ValueListParameterDisplayOnly">
 									<PropertyValue Property="ValueListProperty" String="ID"/>
 								</Record>
 								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Name"/>
+								</Record>
+								<Record Type="Common.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="String"/>
 									<PropertyValue Property="ValueListProperty" String="Description"/>
 								</Record>
 							</Collection>
@@ -71,11 +205,18 @@
 					</Record>
 				</Annotation>
 
+				<Annotation Term="Common.FieldControl" Path="Byte"/>
+				<!-- <Annotation Term="UI.MultiLineText"/> -->
+		        <!-- <Annotation Term="Common.Label" String="String Rename Label"/> -->
 				<!-- <Annotation Term="Common.ValueListWithFixedValues" Bool="true"/> -->
 			</Annotations>
 
+			<Annotations Target="Metadata.HeaderType/Guid">
+				<Annotation Term="Common.FieldControl" Path="Byte"/>
+				<Annotation Term="Common.SemanticObject" String="ZXML_TEMPLATE"/>
+			</Annotations>
+
 			<Annotations Target="Metadata.HeaderType/Date">
-				<Annotation Term="UI.Hidden" Bool="true"/>
 				<Annotation Term="Common.FieldControl" Path="Byte"/>
 			</Annotations>
 
@@ -85,9 +226,13 @@
 
 			<Annotations Target="Metadata.HeaderType/Boolean">
 				<Annotation Term="Common.FieldControl" Path="Byte"/>
+				<!-- <Annotation Term="UI.Hidden" Bool="true"/> -->
+				<!-- <Annotation Term="UI.HiddenFilter" Bool="true"/> -->
 			</Annotations>
 
-
+			<Annotations Target="Metadata.HeaderType/Price">
+				<Annotation Term="Measures.ISOCurrency" Path="Currency"/>
+			</Annotations>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

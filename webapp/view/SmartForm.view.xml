@@ -1,0 +1,15 @@
+<mvc:View
+	controllerName="z.smart.lrn.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:smf="sap.ui.comp.smartfield"
+    xmlns="sap.m"
+	displayBlock="true">
+
+    <Page title="SmartForm"
+		showNavButton="true"
+		navButtonPress=".onNavToMain">
+		
+    </Page>
+
+</mvc:View>

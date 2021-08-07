@@ -2,45 +2,27 @@
 	controllerName="z.smart.lrn.controller.Main"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-    xmlns:smt="sap.ui.comp.smarttable"
-    xmlns:smf="sap.ui.comp.smartfield"
-    xmlns:smmi="sap.ui.comp.smartmultiinput"
-	xmlns:smfb="sap.ui.comp.smartfilterbar"
-    xmlns:t="sap.ui.table"
-	displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	displayBlock="true">
 
-    <Page>
-
-		<smfb:SmartFilterBar id="smartfilterbar"
-			enableBasicSearch="true"
-			entitySet="HeaderSet"
-		/>
-
-		<smt:SmartTable
-			smartFilterId="smartfilterbar"
-			enableAutoBinding="true"
-			entitySet="HeaderSet"
-			requestAtLeastFields="Byte">
-			<t:Table cellClick="onTableCellClick"/>
-		</smt:SmartTable>
-
-		<VBox id="smartContainer" width="50rem">
-			<smf:Smartfield value="{String}"
-				class="sapUiTinyMargin"/>
-
-			<!-- <smmi:SmartMultiInput value="{String}"
-				class="sapUiTinyMargin"/> -->
-
-			<smf:Smartfield value="{Date}"
-				class="sapUiTinyMargin"/>
-
-			<smf:Smartfield value="{Int16}"
-				class="sapUiTinyMargin"/>
-
-			<smf:Smartfield value="{Boolean}"
-				class="sapUiTinyMargin"/>
-
+    <Page title="Examples"
+		class="sapUiContentPadding">
+		<VBox>
+			<Button text="sap.ui.comp.smartfilterbar.SmartFilterBar + sap.ui.comp.smarttable.SmartTable" 
+				press=".showExample"
+				app:route="smartFilterBar"
+			/>
+			
+			<Button text="sap.ui.comp.smartform.SmartForm" 
+				press=".showExample"
+				app:route="smartForm"
+			/>
+			
+			<Button text="sap.ui.comp.smartfield.SmartField" 
+				press=".showExample"
+				app:route="smartField"
+			/>
 		</VBox>
     </Page>
 
