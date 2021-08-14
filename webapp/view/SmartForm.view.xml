@@ -1,15 +1,46 @@
 <mvc:View
-	controllerName="z.smart.lrn.controller.Main"
+	controllerName="z.smart.lrn.controller.SmartForm"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
     xmlns:smf="sap.ui.comp.smartfield"
+	xmlns:smfo="sap.ui.comp.smartform"
     xmlns="sap.m"
 	displayBlock="true">
 
     <Page title="SmartForm"
 		showNavButton="true"
 		navButtonPress=".onNavToMain">
-		
+
+		<smfo:SmartForm id="smartForm">
+			<smfo:Group label="Grour 1">
+				<smfo:GroupElement>
+					<smf:SmartField value="{Guid}"/>
+					<smf:SmartField value="{String}"/>
+					<smf:SmartField value="{Price}"/>
+				</smfo:GroupElement>
+			</smfo:Group>
+
+			<smfo:Group label="Grour 2">
+				<smfo:GroupElement >
+					<smf:SmartField value="{Decimal}"/>
+					<smf:SmartField value="{Boolean}"/>
+				</smfo:GroupElement>
+
+				<smfo:GroupElement>
+					<smf:SmartField value="{Int16}"/>
+					<smf:SmartField value="{Int32}"/>
+				</smfo:GroupElement>
+			</smfo:Group>
+
+			<smfo:Group label="Grour 3">
+				<smfo:GroupElement>
+					<smf:SmartField value="{Date}"/>
+					<smf:SmartField value="{Time}"/>
+					<smf:SmartField value="{Byte}"/>
+				</smfo:GroupElement>
+			</smfo:Group>
+		</smfo:SmartForm>
+
     </Page>
 
 </mvc:View>

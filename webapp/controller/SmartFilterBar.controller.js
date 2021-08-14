@@ -9,7 +9,7 @@ sap.ui.define([
 
         onInit : function () {
 
-            this.getRouter().getRoute("smartField").attachMatched(this._onRouteMatch, this);
+            this.getRouter().getRoute("smartFilterBar").attachMatched(this._onRouteMatch, this);
         },
 
         /**
