@@ -5,17 +5,28 @@
     xmlns:smf="sap.ui.comp.smartfield"
 	xmlns:smfo="sap.ui.comp.smartform"
     xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 	displayBlock="true">
 
     <Page title="SmartForm"
 		showNavButton="true"
 		navButtonPress=".onNavToMain">
+		
+		<smfo:SmartForm id="smartForm1"
+			title="smartForm1"
+			editTogglable="true">
+			<smfo:layout>
+				<smfo:ColumnLayout columnsM="2" columnsL="3" columnsXL="4"/>
+			</smfo:layout>
 
-		<smfo:SmartForm id="smartForm">
 			<smfo:Group label="Grour 1">
 				<smfo:GroupElement>
 					<smf:SmartField value="{Guid}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
 					<smf:SmartField value="{String}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
 					<smf:SmartField value="{Price}"/>
 				</smfo:GroupElement>
 			</smfo:Group>
@@ -23,11 +34,15 @@
 			<smfo:Group label="Grour 2">
 				<smfo:GroupElement >
 					<smf:SmartField value="{Decimal}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement >
 					<smf:SmartField value="{Boolean}"/>
 				</smfo:GroupElement>
 
 				<smfo:GroupElement>
 					<smf:SmartField value="{Int16}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
 					<smf:SmartField value="{Int32}"/>
 				</smfo:GroupElement>
 			</smfo:Group>
@@ -35,7 +50,57 @@
 			<smfo:Group label="Grour 3">
 				<smfo:GroupElement>
 					<smf:SmartField value="{Date}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
 					<smf:SmartField value="{Time}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
+					<smf:SmartField value="{Byte}"/>
+				</smfo:GroupElement>
+			</smfo:Group>
+		</smfo:SmartForm>
+
+		
+		<!-- useHorizontalLayout="true" -->
+		<smfo:SmartForm id="smartForm2"
+			title="smartForm2" 
+			editTogglable="true">
+			<smfo:Group label="Grour 1">
+				<smfo:GroupElement>
+					<smf:SmartField value="{Guid}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
+					<smf:SmartField value="{String}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
+					<smf:SmartField value="{Price}"/>
+				</smfo:GroupElement>
+			</smfo:Group>
+
+			<smfo:Group label="Grour 2">
+				<smfo:GroupElement >
+					<smf:SmartField value="{Decimal}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement >
+					<smf:SmartField value="{Boolean}"/>
+				</smfo:GroupElement>
+
+				<smfo:GroupElement>
+					<smf:SmartField value="{Int16}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
+					<smf:SmartField value="{Int32}"/>
+				</smfo:GroupElement>
+			</smfo:Group>
+
+			<smfo:Group label="Grour 3">
+				<smfo:GroupElement>
+					<smf:SmartField value="{Date}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
+					<smf:SmartField value="{Time}"/>
+				</smfo:GroupElement>
+				<smfo:GroupElement>
 					<smf:SmartField value="{Byte}"/>
 				</smfo:GroupElement>
 			</smfo:Group>

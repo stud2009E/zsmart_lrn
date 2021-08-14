@@ -46,7 +46,7 @@
             
             <NavigationProperty Name="to_Body" 
                Relationship="ZSMART_LRN.assoc_HeaderBody" 
-               FromRole="FromRole_HeaderBody" 
+               FromRole="FromRole_HeaderBody"
                ToRole="ToRole_HeaderBody"/>
          </EntityType>
          
@@ -75,8 +75,8 @@
          </Association>
 
          <EntityContainer Name="ZSMART_LRN_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-            <EntitySet Name="HeaderSet" EntityType="ZSMART_LRN.HeaderType" sap:searchable="true" sap:content-version="1" />
-            <EntitySet Name="BodySet" EntityType="ZSMART_LRN.BodyType" sap:content-version="1" />
+            <EntitySet Name="HeaderSet" EntityType="ZSMART_LRN.HeaderType" sap:label="Header" sap:searchable="true" sap:content-version="1" />
+            <EntitySet Name="BodySet" EntityType="ZSMART_LRN.BodyType" sap:label="Body" sap:content-version="1" />
 
             <AssociationSet Name="set_assoc_HeaderBody" Association="ZSMART_LRN.assoc_HeaderBody" sap:content-version="1">
                <End EntitySet="HeaderSet" Role="FromRole_HeaderBody"/>
