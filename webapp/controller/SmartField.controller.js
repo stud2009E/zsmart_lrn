@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
     "use strict";
 
-    return BaseController.extend("z.smart.lrnotnsp .controller.SmartField", {
+    return BaseController.extend("z.smart.lrn.controller.SmartField", {
 
         onInit : function () {
 

@@ -120,6 +120,11 @@
 					"pattern": "smartFilterBar",
 					"name": "smartFilterBar",
 					"target": "smartFilterBar"
+				},
+				{
+					"pattern": "smartChart",
+					"name": "smartChart",
+					"target": "smartChart"
 				}
 			],
 			"targets": {
@@ -137,6 +142,11 @@
 					"viewName": "SmartFilterBar",
 					"viewLevel": 2,
 					"viewId": "smartFilterBar"
+				},
+				"smartChart": {
+					"viewName": "SmartChart",
+					"viewLevel": 2,
+					"viewId": "smartChart"
 				},
 				"notFound": {
 					"viewName": "NotFound",

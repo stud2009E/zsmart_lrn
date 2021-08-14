@@ -23,6 +23,11 @@
 				press=".showExample"
 				app:route="smartField"
 			/>
+
+			<Button text="sap.ui.comp.smartchart.SmartChart" 
+				press=".showExample"
+				app:route="smartChart"
+			/>
 		</VBox>
     </Page>
 

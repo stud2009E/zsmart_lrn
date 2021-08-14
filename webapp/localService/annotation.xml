@@ -30,6 +30,7 @@
 						<PropertyValue Property="Visualizations">
 							<Collection>
 								<AnnotationPath>@UI.LineItem</AnnotationPath>
+								<AnnotationPath>@UI.Chart</AnnotationPath>
 							</Collection>
 						</PropertyValue>
 					</Record>
@@ -154,6 +155,23 @@
 							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#fg2"/>
 						</Record>
 					</Collection>
+				</Annotation>
+
+
+				<Annotation Term="UI.Chart" >
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Guid</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Int16</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
 				</Annotation>
 
 			</Annotations>

@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
     "use strict";
 
-    return BaseController.extend("z.smart.lrn.controller.SmartFilterBar", {
+    return BaseController.extend("z.smart.lrn.controller.SmartChart", {
 
         onInit : function () {
 

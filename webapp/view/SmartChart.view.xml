@@ -1,0 +1,23 @@
+<mvc:View
+	controllerName="z.smart.lrn.controller.SmartChart"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:smt="sap.ui.comp.smarttable"
+    xmlns:smch="sap.ui.comp.smartchart"
+    xmlns:smf="sap.ui.comp.smartfield"
+    xmlns:smmi="sap.ui.comp.smartmultiinput"
+	xmlns:smfb="sap.ui.comp.smartfilterbar"
+    xmlns:t="sap.ui.table"
+    xmlns="sap.m"
+	displayBlock="true">
+
+    <Page title="SmartChart"
+		showNavButton="true"
+		navButtonPress="onNavToMain">
+		
+		<smch:SmartChart enableAutoBinding="true" 
+			entitySet="HeaderSet"/>
+
+    </Page>
+
+</mvc:View>
