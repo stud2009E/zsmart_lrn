@@ -10,7 +10,8 @@
 
     <Page title="SmartForm"
 		showNavButton="true"
-		navButtonPress=".onNavToMain">
+		navButtonPress=".onNavToMain"
+		class="sapUiContentPadding">
 		
 		<smfo:SmartForm id="smartForm1"
 			title="smartForm1"

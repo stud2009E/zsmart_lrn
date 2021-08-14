@@ -12,6 +12,7 @@
 
     <Page title="SmartField"
 		showNavButton="true"
+		class="sapUiContentPadding"
 		navButtonPress="onNavToMain">
 		<VBox>
 			<smt:SmartTable
