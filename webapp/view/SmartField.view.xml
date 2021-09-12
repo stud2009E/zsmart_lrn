@@ -18,6 +18,7 @@
 			<smt:SmartTable
 				enableAutoBinding="true"
 				entitySet="HeaderSet"
+				beforeRebindTable="onBeforeRebind"
 				requestAtLeastFields="Byte">
 				<t:Table cellClick="onTableCellClick"
 					visibleRowCount="7"

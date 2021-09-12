@@ -17,7 +17,7 @@
 		navButtonPress="onNavToMain">
 		
 		<smch:SmartChart enableAutoBinding="true"
-			showToolbar="false"
+			showToolbar="true"
 			entitySet="HeaderSet"/>
 
     </Page>

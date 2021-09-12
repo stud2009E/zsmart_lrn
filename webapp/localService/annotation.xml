@@ -24,7 +24,9 @@
 					<Record Type="UI.PresentationVariantType">
 						<PropertyValue Property="RequestAtLeast">
 							<Collection>
+								<PropertyPath>Guid</PropertyPath>
 								<PropertyPath>Int32</PropertyPath>
+								<PropertyPath>to_Int/Int16</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="Visualizations">
@@ -40,13 +42,10 @@
 					<Collection>
 						<PropertyPath>Guid</PropertyPath>
 					</Collection>
-				</Annotation>
+				</Annotation>				
 
 				<Annotation Term="UI.LineItem">
 					<Collection>
-						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="Guid"/>
-						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Date"/>
 						</Record>
@@ -175,8 +174,20 @@
 				</Annotation>
 
 			</Annotations>
+
+
 			
 			<Annotations Target="Metadata.ZSMART_LRN_Entities/HeaderSet">
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record Type="Capabilities.SortRestrictionsType">
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>Date</PropertyPath>
+								<PropertyPath>Int16</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="Capabilities.FilterRestrictions">
 					<Record Type="Capabilities.FilterRestrictionsType">
 						<PropertyValue Property="NonFilterableProperties">
@@ -192,14 +203,25 @@
 					</Record>
 				</Annotation>
 
-				<!-- <Annotation Term="Common.FilterExpressionRestrictions">
+				<Annotation Term="Capabilities.UpdateRestrictions">
+					<Record Type="Capabilities.UpdateRestrictionsType">
+
+						<PropertyValue Property="NonUpdatableProperties">
+							<Collection>
+								<PropertyPath>String</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="Common.FilterExpressionRestrictions">
 					<Collection>
 						<Record Type="Common.FilterExpressionRestrictionType">
 							<PropertyValue Property="Property" PropertyPath="String"/>
 							<PropertyValue Property="AllowedExpressions" EnumMember="Common.FilterExpressionType/SingleValue"/>
 						</Record>
 					</Collection>
-				</Annotation> -->
+				</Annotation>
 			</Annotations>
 
 			<Annotations Target="Metadata.HeaderType/String">
@@ -208,14 +230,20 @@
 						<PropertyValue Property="CollectionPath" String="BodySet"/>
 						<PropertyValue Property="Parameters">
 							<Collection>
-								<Record Type="Common.ValueListParameterDisplayOnly">
+								<Record Type="Common.ValueListParameterFilterOnly">
 									<PropertyValue Property="ValueListProperty" String="ID"/>
 								</Record>
-								<Record Type="Common.ValueListParameterDisplayOnly">
-									<PropertyValue Property="ValueListProperty" String="Name"/>
-								</Record>
 								<Record Type="Common.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Name"/>
 									<PropertyValue Property="LocalDataProperty" PropertyPath="String"/>
+								</Record>
+
+								<Record Type="Common.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Int16"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="to_Int/Int16"/>
+								</Record>
+								
+								<Record Type="Common.ValueListParameterDisplayOnly">
 									<PropertyValue Property="ValueListProperty" String="Description"/>
 								</Record>
 							</Collection>
@@ -223,10 +251,16 @@
 					</Record>
 				</Annotation>
 
-				<Annotation Term="Common.FieldControl" Path="Byte"/>
+				<!-- <Annotation Term="Common.FieldControl" Path="Byte"/> -->
+				
 				<!-- <Annotation Term="UI.MultiLineText"/> -->
-		        <!-- <Annotation Term="Common.Label" String="String Rename Label"/> -->
+		        <Annotation Term="Common.Label" String="String Rename Label"/>
 				<!-- <Annotation Term="Common.ValueListWithFixedValues" Bool="true"/> -->
+			</Annotations>
+
+
+			<Annotations Target="Metadata.BodyType/Name">
+				<Annotation Term="Common.Text" Path="Description"/>
 			</Annotations>
 
 			<Annotations Target="Metadata.HeaderType/Guid">
@@ -249,6 +283,7 @@
 			</Annotations>
 
 			<Annotations Target="Metadata.HeaderType/Price">
+				<Annotation Term="Common.FieldControl" Path="Byte"/>
 				<Annotation Term="Measures.ISOCurrency" Path="Currency"/>
 			</Annotations>
 		</Schema>

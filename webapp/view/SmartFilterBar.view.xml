@@ -18,7 +18,7 @@
 
 		<smfb:SmartFilterBar id="smartFilter"
 			considerSelectionVariants="true"
-			enableBasicSearch="true"
+			enableBasicSearch="false"
 			persistencyKey="SmartFilterPKey"
 			entitySet="HeaderSet"
 			initialise="onMetadataAvailableInSmartFilter"
@@ -36,6 +36,8 @@
 				persistencyKey="SmartFilterPKey"
 				initialise="onInitialiseSmartTable"
 				beforeRebindTable="onBeforeRebindSmartTable"
+				customData:useSmartField="true"
+				editTogglable="true"
 			/>
 				<!--  
 					customData:useSmartField="true"

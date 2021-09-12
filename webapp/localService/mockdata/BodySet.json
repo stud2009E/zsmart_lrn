@@ -3,60 +3,70 @@
 		"Guid": "1f707e91-0fef-4c88-ade1-65e932921a25",
 		"ID": "000",
 		"Name": "Reprehenderit",
-		"Description": "Reprehenderit sint velit. Ipsum laboris."
+		"Description": "Reprehenderit sint velit. Ipsum laboris.",
+		"Int16": 1
 	},
 	{
 		"Guid": "1f707e91-0fef-4c88-ade1-65e932921a25",
 		"ID": "001",
 		"Name": "Lorem",
-		"Description": "Lorem aliquip id pariatur."
+		"Description": "Lorem aliquip id pariatur.",
+		"Int16": 2
 	},
 	{
 		"Guid": "1f707e91-0fef-4c88-ade1-65e932921a25",
 		"ID": "002",
 		"Name": "Mollit",
-		"Description": "Mollit excepteur."
+		"Description": "Mollit excepteur.",
+		"Int16": 3
 	},
 	{
 		"Guid": "1f707e91-0fef-4c88-ade1-65e932921a25",
 		"ID": "003",
 		"Name": "Laboris",
-		"Description": "Laboris nulla sunt duis. Aliqua anim."
+		"Description": "Laboris nulla sunt duis. Aliqua anim.",
+		"Int16": 4
 	},
 	{
 		"Guid": "1f707e91-0fef-4c88-ade1-65e932921a25",
 		"ID": "004",
 		"Name": "Ullamco",
-		"Description": "Ullamco est. Velit ullamco eiusmod ad."
+		"Description": "Ullamco est. Velit ullamco eiusmod ad.",
+		"Int16": 5
 	},
 	{
 		"Guid": "ecd40596-33eb-4192-b6f1-8a3ce393369a",
 		"ID": "000",
 		"Name": "Esse",
-		"Description": "Esse non officia fugiat non ut aute elit non veniam."
+		"Description": "Esse non officia fugiat non ut aute elit non veniam.",
+		"Int16": 6
 	},
 	{
 		"Guid": "ecd40596-33eb-4192-b6f1-8a3ce393369a",
 		"ID": "001",
 		"Name": "Voluptate",
-		"Description": "Voluptate ea cupidatat commodo enim."
+		"Description": "Voluptate ea cupidatat commodo enim.",
+		"Int16": 7
 	},
 	{
 		"Guid": "ecd40596-33eb-4192-b6f1-8a3ce393369a",
 		"ID": "002",
 		"Name": "Aliquip",
-		"Description": "Aliquip consequat in amet ipsum dolore."
+		"Description": "Aliquip consequat in amet ipsum dolore.",
+		"Int16": 8
 	},
 	{
 		"Guid": "ecd40596-33eb-4192-b6f1-8a3ce393369a",
 		"ID": "003",
 		"Name": "Culpa",
-		"Description": "Culpa consequat ex sunt cupidatat."
+		"Description": "Culpa consequat ex sunt cupidatat.",
+		"Int16": 10
 	},
 	{
 		"Guid": "ecd40596-33eb-4192-b6f1-8a3ce393369a",
 		"ID": "004",
 		"Name": "Sunt",
-		"Description": "Sunt magna laborum dolor veniam irure."
+		"Description": "Sunt magna laborum dolor veniam irure.",
+		"Int16": 11
 	}
 ]

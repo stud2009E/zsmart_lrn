@@ -30,6 +30,16 @@ sap.ui.define([
             var oContainer = this.byId("smartContainer");
 
             oContainer.setBindingContext(oCtx);
+        },
+
+        onBeforeRebind: function(oEvent){
+            var oBindingParams = oEvent.getParameter("bindingParams");
+
+            // oBindingParams.events.dataReceived = function(oEvent){
+
+            // };
+
+            oBindingParams.parameters.expand = "to_Int";
         }
 
     });
